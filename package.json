@@ -1,0 +1,23 @@
+{
+  "name": "dingloio-chat",
+  "version": "1.0.0",
+  "description": "DingloIO is a modern production-ready chat widget, ready to use to give your customers an enhaced customer support.",
+  "main": "dist/index.js",
+  "types": "dist/types/index.d.ts",
+  "files": ["dist"],
+  "homepage": "https://dinglo-io.vercel.app/",
+  "repository": {
+    "url": "https://github.com/dennisdingo28/Tracker-Storage-Package"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch"
+  },
+  "author": "Moldovan Dennis George",
+  "license": "ISC",
+  "dependencies": {
+    "nanoid": "^5.1.5",
+    "socket.io-client": "^4.8.1",
+    "typescript": "^5.8.3"
+  }
+}
