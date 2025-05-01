@@ -25,7 +25,7 @@ export default class DingloIO {
       }
 
       const connectionId = this.getFromLocalStorage(this.storagePrefix + "user") || "";
-      this.socket = io("http://localhost:3001", {
+      this.socket = io("https://dingloio-server.onrender.com", {
         query: {
           apiKey: this.apiKey,
           connectionId: connectionId,
@@ -48,7 +48,7 @@ export default class DingloIO {
   }
 
   async save(newMessage: MessagePayload): Promise<any> {
-    const res = await fetch(`http://localhost:3000/api/client/${this.chatId}`, {
+    const res = await fetch(`https://dinglo-io.vercel.app/api/client/${this.chatId}`, {
       method: "POST",
       body: JSON.stringify({
         ...newMessage,
@@ -64,7 +64,7 @@ export default class DingloIO {
 
   async getConversation(): Promise<any> {
     const res = await fetch(
-      `http://localhost:3000/api/client/${this.chatId}?apiKey=${
+      `https://dinglo-io.vercel.app/api/client/${this.chatId}?apiKey=${
         this.clientKey.trim() !== "" ? this.clientKey : this.apiKey
       }`
     );
@@ -73,7 +73,7 @@ export default class DingloIO {
 
   async getQuestions(): Promise<any> {
     const res = await fetch(
-      `http://localhost:3000/api/client/${this.chatId}/questions?apiKey=${
+      `https://dinglo-io.vercel.app/api/client/${this.chatId}/questions?apiKey=${
         this.clientKey.trim() !== "" ? this.clientKey : this.apiKey
       }`
     );
